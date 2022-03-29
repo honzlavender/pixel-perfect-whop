@@ -1,6 +1,6 @@
 # Whop's Figma Assessment - Pixel Perfect Todo List
 
-[https://www.figma.com/file/s6Husazop7uufjGxdcdOPs/Front-End-Test-(Carl-Roberts)?node-id=2%3A37](Figma file for reference)
+[https://www.figma.com/file/s6Husazop7uufjGxdcdOPs/Front-End-Test-(Carl-Roberts)?node-id=2%3A37](Figma File) for reference
 
 In the project directory, you can run:
 
