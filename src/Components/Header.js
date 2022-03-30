@@ -1,29 +1,25 @@
 import CreateIcon from "../iconComponents/createIcon";
 import styled from "styled-components";
 import Avatar from "./Avatar";
-// import { useState } from "react";
 import { Link } from "react-router-dom";
 
-
 export default function Header() {
-    // const [newList, setNewList] = useState("")
 
-    // const onClick = () => {
-    //     setNewList("Guy")
-    // }
 
   return (
-    <Body>
-      <Title>
-          <Avatar/>
-        <Head>Lists</Head>
-      </Title>
-      <Link to="/newlist">
-      <Button>
-          <CreateIcon/>
-      </Button>
-      </Link>
-    </Body>
+    <>
+      <Body>
+        <Title>
+          <Avatar />
+          <Head>Lists</Head>
+        </Title>
+        <Link to="/newlist">
+          <Button>
+            <CreateIcon />
+          </Button>
+        </Link>
+      </Body>
+    </>
   );
 }
 
@@ -54,8 +50,9 @@ const Title = styled.div`
 const Button = styled.button`
   border: none;
   background-color: #fff;
-  &:hover{
-      color: ##2FE6FF;
+  margin: 0;
+  padding: 0;
+  &:hover {
+    color: ##2fe6ff;
   }
-`
-
+`;
