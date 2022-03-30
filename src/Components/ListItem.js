@@ -1,18 +1,19 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import PlusIcon from "../iconComponents/plusIcon";
+import EllipsesIcon from "../iconComponents/ellipsesIcon";
 
-export default function CreateList() {
+
+export default function ListItem({item}) {
+
   return (
     <>
-      <Link to="/newlist" style={{ textDecoration: "none", color: "#505050" }}>
+      {/* <Link to="/newlist" style={{ textDecoration: "none", color: "#505050" }}> */}
         <Body>
-          <Head>Create a list</Head>
+          <Head>{item.value}</Head>
           <Head>
-            <PlusIcon />
+            <EllipsesIcon />
           </Head>
         </Body>
-      </Link>
+      {/* </Link> */}
     </>
   );
 }
@@ -44,18 +45,18 @@ const Head = styled.p`
   margin: 0 16px;
 `;
 
-const Title = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
+// const Title = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+// `;
 
-const Button = styled.button`
-  border: none;
-  background-color: #fff;
-  margin: 0;
-  padding: 0;
-  &:hover {
-    color: ##2fe6ff;
-  }
-`;
+// const Button = styled.button`
+//   border: none;
+//   background-color: #fff;
+//   margin: 0;
+//   padding: 0;
+//   &:hover {
+//     color: ##2fe6ff;
+//   }
+// `;

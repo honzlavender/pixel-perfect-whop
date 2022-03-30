@@ -3,16 +3,19 @@ import ArrowIcon from "../iconComponents/arrowIcon";
 import CreateTitle from "./CreateTitle";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import ListItem from "./ListItem";
+// import List from "./List";
+
 
 export default function AddNewTitle() {
   const navigate = useNavigate();
+
   const [list, setList] = useState([]);
-  const [newTitle, setNewTitle] = useState('');
+  const [newTitle, setNewTitle] = useState("");
 
   const changeHandler = (e) => {
     e.preventDefault();
-    const value = e.target.value;
-    setNewTitle(value);
+    setNewTitle(e.target.value);
   };
 
   const submitHandler = (e) => {
@@ -26,12 +29,13 @@ export default function AddNewTitle() {
       });
     }
     navigate({
-      pathname: "/",
+      // pathname: "/",
       state: {
-        newTitle,
+        list
       },
     });
   };
+  console.log(list)
 
   return (
     <>
@@ -51,19 +55,14 @@ export default function AddNewTitle() {
         </Body>
         <CreateTitle input={newTitle} changeHandler={changeHandler} />
       </form>
-
-      <ul>
-        {list.map((item) => {
+      {list.map((item) => {
           return (
             <div>
-              <li>
-                {/* <li key={item.key}>  */}
-                {item.value}
-              </li>
+              {/* <List /> */}
+                <ListItem item={item}/>
             </div>
           );
         })}
-      </ul>
     </>
   );
 }

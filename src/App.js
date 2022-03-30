@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Header from './Components/Header';
+import Home from "./Home";
 import AddNewList from './Components/AddNewTitle'
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Header />} />
+        <Route path="/" element={<Home />} />
         <Route path="/newlist" element={<AddNewList/>} />
       </Routes>
     </Router>
