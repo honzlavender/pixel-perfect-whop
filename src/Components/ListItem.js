@@ -1,19 +1,27 @@
+import { useRef, useState } from "react";
 import styled from "styled-components";
 import EllipsesIcon from "../iconComponents/ellipsesIcon";
+import DropdownMenu from "./DropdownMenu";
+
+export default function ListItem({ item }) {
+  //false is closed/not clicked (default)
+  const [dropdown, setDropdown] = useState(false);
+  // let ref = useRef();
+
+  const handleClick = () => {
+    setDropdown(!dropdown)
+  }
 
 
-export default function ListItem({item}) {
-console.log(item)
-  return ( 
+
+  return (
     <>
-      {/* <Link to="/newlist" style={{ textDecoration: "none", color: "#505050" }}> */}
-        <Body>
-          <Head>{item}</Head>
-          <Head>
-            <EllipsesIcon />
-          </Head>
-        </Body>
-      {/* </Link> */}
+      <Body>
+        <Head>{item}</Head>
+        <Head onClick={dropdown ? <DropdownMenu/> : null}>
+          <EllipsesIcon />
+        </Head>
+      </Body>
     </>
   );
 }
@@ -38,11 +46,16 @@ const Body = styled.div`
   }
 `;
 
-const Head = styled.p`
+const Head = styled.button`
   color: #242424;
   font-size: 20px;
   font-weight: 600;
+  background-color: #ffffff00;
+  border: none;
   margin: 0 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
 // const Title = styled.div`

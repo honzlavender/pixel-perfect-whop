@@ -1,18 +1,10 @@
 import styled from "styled-components";
 import ArrowIcon from "../iconComponents/arrowIcon";
 import CreateTitle from "./CreateTitle";
-// import { useState } from "react";
 import { Link } from "react-router-dom";
-// import ListItem from "./ListItem";
-// import List from "./List";
 
 export default function AddNewTitle({ onChange, onSubmit, list, newTitle }) {
-  // const navigate = useNavigate();
 
-  // const routeChange = () =>{ 
-  //   // let path = `newPath`; 
-  //   navigate('/');
-  // }
   return (
     <>
       <form onSubmit={onSubmit}>
@@ -25,7 +17,6 @@ export default function AddNewTitle({ onChange, onSubmit, list, newTitle }) {
               </Link>
             </Head>
           </Title>
-          {/* <form onSubmit={submitHandler}> */}
             <Head type="submit">
               Done
             </Head>
