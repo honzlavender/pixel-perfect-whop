@@ -1,24 +1,29 @@
 import styled from "styled-components";
-import DeleteIcon from "../iconComponents/deleteIcon";
 
-export default function MenuButtons({icon, title}) {
+export default function MenuButtons({ icon, title }) {
+
+    const handleDelete = () => {
+        alert('nasty')
+    }
+
   return (
     <>
-      <Body>
-        <Head>
-            {icon}
-        </Head>
+      <Body onClick={handleDelete}>
+        <Head>{icon}</Head>
         <Head>{title}</Head>
       </Body>
     </>
   );
 }
 
-const Body = styled.div`
+const Body = styled.button`
   display: flex;
-padding: 16px 12px;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 12px;
   &:hover {
-    background-color: #f4f4f4;
+    // background-color: #f4f4f4;
   }
 `;
 

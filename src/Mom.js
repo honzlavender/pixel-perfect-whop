@@ -11,6 +11,8 @@ function Mom() {
   const [list, setList] = useState([]);
   const [newTitle, setNewTitle] = useState("");
 
+  // const handleDelete
+
   const onChange = (e) => {
     e.preventDefault();
     setNewTitle(e.target.value);
@@ -23,7 +25,8 @@ function Mom() {
       alert("OOPS");
     } else {
       setList((prevList) => {
-        return [ newTitle, ...prevList];
+        return [{ text: newTitle, key: Math.random().toString() }, ...prevList]
+        // return [ newTitle, ...prevList];
       });
     }
     navigate({

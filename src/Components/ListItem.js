@@ -1,25 +1,18 @@
-import { useRef, useState } from "react";
+// import { useRef, useState } from "react";
 import styled from "styled-components";
 import EllipsesIcon from "../iconComponents/ellipsesIcon";
 import DropdownMenu from "./DropdownMenu";
+// import DropdownMenu from "./DropdownMenu";
 
 export default function ListItem({ item }) {
-  //false is closed/not clicked (default)
-  const [dropdown, setDropdown] = useState(false);
-  // let ref = useRef();
-
-  const handleClick = () => {
-    setDropdown(!dropdown)
-  }
-
 
 
   return (
     <>
       <Body>
         <Head>{item}</Head>
-        <Head onClick={dropdown ? <DropdownMenu/> : null}>
-          <EllipsesIcon />
+        <Head>
+          <DropdownMenu/>
         </Head>
       </Body>
     </>
@@ -38,7 +31,7 @@ const Body = styled.div`
   justify-content: space-between;
   margin: 32px 24px 24px;
   &:hover {
-    background-color: #f4f4f4;
+    : #f4f4f4;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
   }
   @media (min-width: 1040px) {

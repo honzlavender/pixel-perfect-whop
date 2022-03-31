@@ -1,0 +1,23 @@
+/* I know using !important is Not in best practice - 
+//I need to learn the best way to customize third party library styles 
+(or not use them at all */
+
+.szh-menu {
+    min-width: 115px !important;
+    padding: 0 !important;
+    border-radius: 8px !important;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08) !important;
+    position: absolute !important;
+    margin: 20px 0px 0 -40px !important;
+}
+
+.szh-menu__item {
+    border-radius: 8px !important;
+    padding: 0 !important;
+    position: static !important;
+    margin: 0 !important;
+}
+
+.szh-menu__item:hover {
+    background-color: #f4f4f4;
+}
