@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-export default function MenuButtons({ icon, title }) {
+export default function MenuButtons({ icon, title, handleDelete, newTitle }) {
 
-    const handleDelete = () => {
-        alert('nasty')
-    }
+    // const handleDelete = () => {
+    //     alert('nasty')
+    // }
 
   return (
     <>
-      <Body onClick={handleDelete}>
+      <Body onClick={() => handleDelete(newTitle.key)}>
         <Head>{icon}</Head>
         <Head>{title}</Head>
       </Body>

@@ -1,18 +1,17 @@
 // import { useRef, useState } from "react";
 import styled from "styled-components";
-import EllipsesIcon from "../iconComponents/ellipsesIcon";
 import DropdownMenu from "./DropdownMenu";
 // import DropdownMenu from "./DropdownMenu";
 
-export default function ListItem({ item }) {
-
+export default function ListItem({ item, handleDelete, handleEdit }) {
+console.log(item)
 
   return (
     <>
       <Body>
-        <Head>{item}</Head>
+        <Head>{item.text}</Head>
         <Head>
-          <DropdownMenu/>
+          <DropdownMenu item={item} handleDelete={handleDelete} handleEdit={handleEdit}/>
         </Head>
       </Body>
     </>

@@ -1,15 +1,21 @@
 import styled from "styled-components";
 
-export default function CreateTitle({ onChange, newTitle }) {
+export default function CreateTitle({ onChange, newTitle, list }) {
 
 
   return (
+    <div>
+   {/* {( newTitle !== '' ?  */}
+   
     <Input
       placeholder="List title"
       type="text"
       onChange={onChange}
-      value={newTitle}
+      value={newTitle.text}
+      defaultValue= {newTitle.key}
     />
+    {/* // )} */}
+    </div>
   );
 }
 

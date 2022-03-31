@@ -52,7 +52,7 @@ const Button = styled.button`
   background-color: #fff;
   margin: 0;
   padding: 0;
-  &:hover {
-    color: ##2fe6ff;
+  &:active {
+    fill: red;
   }
 `;

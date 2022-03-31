@@ -1,15 +1,17 @@
 // import CreateList from "./Components/CreateList";
-import DeleteIcon from "../iconComponents/deleteIcon";
-import DropdownMenu from "./DropdownMenu";
 import Header from "./Header";
 import List from "./List";
-import MenuButtons from "./MenuButtons";
 
-export default function Home({ list }) {
+export default function Home({ list, handleDelete, handleEdit, newTitle }) {
   return (
     <>
       <Header />
-      <List list={list} />
+      <List
+        list={list}
+        handleDelete={handleDelete}
+        handleEdit={handleEdit}
+        newTitle={newTitle}
+      />
       {/* <DropdownMenu/> */}
     </>
   );

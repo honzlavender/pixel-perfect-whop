@@ -12,7 +12,7 @@ export default function AddNewTitle({ onChange, onSubmit, list, newTitle }) {
           <Title>
             <ArrowIcon />
             <Head>
-              <Link to="/" style={{ textDecoration: "none", color: "#505050" }}>
+              <Link to="/" style={{ textDecoration: "none", color: "#505050", marginTop: '20px'}}>
                 Cancel
               </Link>
             </Head>
@@ -29,8 +29,6 @@ export default function AddNewTitle({ onChange, onSubmit, list, newTitle }) {
 
 const Body = styled.section`
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
   margin: 32px 24px 24px;
   @media (min-width: 1040px) {
@@ -50,16 +48,7 @@ const Title = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+  align-content: center;
 `;
 
-// const Input = styled.input`
-//   outline: none;
-//   border: none;
-//   font-size: 28px;
-//   font-weight: 600;
-//   color: #242424;
-//   margin: 0px 24px 24px;
-//   @media (min-width: 1040px) {
-//     margin: 32px 40px 24px;
-//   }
-// `;
