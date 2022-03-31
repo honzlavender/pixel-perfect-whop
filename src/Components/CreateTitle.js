@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-export default function CreateTitle({ changeHandler, input }) {
+export default function CreateTitle({ onChange, newTitle }) {
 
 
   return (
     <Input
       placeholder="List title"
       type="text"
-      onChange={changeHandler}
-      value={input}
+      onChange={onChange}
+      value={newTitle}
     />
   );
 }

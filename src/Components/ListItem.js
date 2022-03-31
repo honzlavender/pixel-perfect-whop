@@ -3,12 +3,12 @@ import EllipsesIcon from "../iconComponents/ellipsesIcon";
 
 
 export default function ListItem({item}) {
-
-  return (
+console.log(item)
+  return ( 
     <>
       {/* <Link to="/newlist" style={{ textDecoration: "none", color: "#505050" }}> */}
         <Body>
-          <Head>{item.value}</Head>
+          <Head>{item}</Head>
           <Head>
             <EllipsesIcon />
           </Head>

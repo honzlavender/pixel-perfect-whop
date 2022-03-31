@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Mom from "./Mom";
 
-import Home from "./Home";
-import AddNewList from './Components/AddNewTitle'
+// import Home from "./Home";
+// import AddNewList from "./Components/AddNewTitle";
+// // import { useNavigate } from "react-router-dom";
+// import { useState } from "react";
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/newlist" element={<AddNewList/>} />
-      </Routes>
+      <Mom />
     </Router>
   );
 }

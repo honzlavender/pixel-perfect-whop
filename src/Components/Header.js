@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Avatar from "./Avatar";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header({onClick}) {
 
 
   return (

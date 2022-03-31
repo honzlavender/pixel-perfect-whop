@@ -1,45 +1,21 @@
 import styled from "styled-components";
 import ArrowIcon from "../iconComponents/arrowIcon";
 import CreateTitle from "./CreateTitle";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import ListItem from "./ListItem";
+// import { useState } from "react";
+import { Link } from "react-router-dom";
+// import ListItem from "./ListItem";
 // import List from "./List";
 
+export default function AddNewTitle({ onChange, onSubmit, list, newTitle }) {
+  // const navigate = useNavigate();
 
-export default function AddNewTitle() {
-  const navigate = useNavigate();
-
-  const [list, setList] = useState([]);
-  const [newTitle, setNewTitle] = useState("");
-
-  const changeHandler = (e) => {
-    e.preventDefault();
-    setNewTitle(e.target.value);
-  };
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-
-    if (!newTitle) {
-      alert("OOPS");
-    } else {
-      setList((prevList) => {
-        return [{ value: newTitle }, ...prevList];
-      });
-    }
-    navigate({
-      // pathname: "/",
-      state: {
-        list
-      },
-    });
-  };
-  console.log(list)
-
+  // const routeChange = () =>{ 
+  //   // let path = `newPath`; 
+  //   navigate('/');
+  // }
   return (
     <>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={onSubmit}>
         <Body>
           <Title>
             <ArrowIcon />
@@ -50,19 +26,12 @@ export default function AddNewTitle() {
             </Head>
           </Title>
           {/* <form onSubmit={submitHandler}> */}
-
-          <Head type="submit">Done</Head>
+            <Head type="submit">
+              Done
+            </Head>
         </Body>
-        <CreateTitle input={newTitle} changeHandler={changeHandler} />
+        <CreateTitle newTitle={newTitle} onChange={onChange} />
       </form>
-      {list.map((item) => {
-          return (
-            <div>
-              {/* <List /> */}
-                <ListItem item={item}/>
-            </div>
-          );
-        })}
     </>
   );
 }
@@ -91,3 +60,15 @@ const Title = styled.div`
   flex-direction: row;
   align-items: center;
 `;
+
+// const Input = styled.input`
+//   outline: none;
+//   border: none;
+//   font-size: 28px;
+//   font-weight: 600;
+//   color: #242424;
+//   margin: 0px 24px 24px;
+//   @media (min-width: 1040px) {
+//     margin: 32px 40px 24px;
+//   }
+// `;

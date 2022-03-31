@@ -44,18 +44,18 @@ const Head = styled.p`
   margin: 0 16px;
 `;
 
-const Title = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
+// const Title = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+// `;
 
-const Button = styled.button`
-  border: none;
-  background-color: #fff;
-  margin: 0;
-  padding: 0;
-  &:hover {
-    color: ##2fe6ff;
-  }
-`;
+// const Button = styled.button`
+//   border: none;
+//   background-color: #fff;
+//   margin: 0;
+//   padding: 0;
+//   &:hover {
+//     color: ##2fe6ff;
+//   }
+// `;
