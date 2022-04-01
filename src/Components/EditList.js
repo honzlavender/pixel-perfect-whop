@@ -1,15 +1,12 @@
 import styled from "styled-components";
 import ArrowIcon from "../iconComponents/arrowIcon";
-import CreateTitle from "./CreateTitle";
-import { useNavigate, useLocation } from "react-router-dom";
+// import CreateTitle from "./CreateTitle";
+import { useNavigate } from "react-router-dom";
 
-export default function AddNewTitle({
-  onChange,
-  onSubmit,
+export default function EditList({
   submitEdit,
   newTitle,
-  toEdit,
-  onEditChange,
+  onChange
 }) {
   const navigate = useNavigate();
   const nav = () => {
@@ -17,6 +14,8 @@ export default function AddNewTitle({
       pathname: "/",
     });
   };
+//   console.log(newTitle.text)
+
   return (
     <>
       <Body>
@@ -42,16 +41,22 @@ export default function AddNewTitle({
             Cancel
           </p>
         </Head>
-          <Head type="submit" onClick={onSubmit}>
-            Done
+          <Head onClick={() => submitEdit(newTitle.key)}>
+            wow
           </Head>
       </Body>
-      <CreateTitle
+      <Input
+           placeholder={newTitle.text}
+          type="text"
+          onChange={onChange}
+
+        />
+      {/* <CreateTitle
         newTitle={newTitle}
         onChange={onChange}
         toEdit={toEdit}
         onEditChange={onEditChange}
-      />
+      /> */}
     </>
   );
 }
@@ -81,5 +86,19 @@ const Head = styled.button`
   }
   &:active {
     color: #242424;
+  }
+`;
+
+
+
+const Input = styled.input`
+  outline: none;
+  border: none;
+  font-size: 28px;
+  font-weight: 600;
+  color: #242424;
+  margin: 0px 24px 24px;
+  @media (min-width: 1040px) {
+    margin: 32px 40px 24px;
   }
 `;

@@ -3,15 +3,15 @@ import styled from "styled-components";
 import DropdownMenu from "./DropdownMenu";
 // import DropdownMenu from "./DropdownMenu";
 
-export default function ListItem({ item, handleDelete, handleEdit }) {
-console.log(item)
+export default function ListItem({ item, handleDelete }) {
+// console.log(item)
 
   return (
     <>
       <Body>
         <Head>{item.text}</Head>
         <Head>
-          <DropdownMenu item={item} handleDelete={handleDelete} handleEdit={handleEdit}/>
+          <DropdownMenu item={item} handleDelete={handleDelete}/>
         </Head>
       </Body>
     </>
@@ -49,19 +49,3 @@ const Head = styled.button`
   flex-direction: row;
   align-items: center;
 `;
-
-// const Title = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-// `;
-
-// const Button = styled.button`
-//   border: none;
-//   background-color: #fff;
-//   margin: 0;
-//   padding: 0;
-//   &:hover {
-//     color: ##2fe6ff;
-//   }
-// `;

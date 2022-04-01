@@ -1,15 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Mom from "./Mom";
+import Parent from "./Parent";
 
-// import Home from "./Home";
-// import AddNewList from "./Components/AddNewTitle";
-// // import { useNavigate } from "react-router-dom";
-// import { useState } from "react";
-
+//App was the parent file but useNavigate cannot work with the Router so I built a bridge between them
 function App() {
   return (
     <Router>
-      <Mom />
+      <Parent />
     </Router>
   );
 }

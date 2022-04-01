@@ -3,21 +3,25 @@ import styled from "styled-components";
 import DeleteIcon from "../iconComponents/deleteIcon";
 import EditIcon from "../iconComponents/editIcon";
 import EllipsesIcon from "../iconComponents/ellipsesIcon";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { Menu, MenuItem } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 
-export default function DropdownMenu({ handleDelete, handleEdit, item }) {
+export default function DropdownMenu({ handleDelete, item }) {
+  const navigate = useNavigate();
+
+  console.log(item.text);
   return (
     <Menu
       menuButton={
-        <Button className="btn-primary">
+        <Button>
           <EllipsesIcon />
         </Button>
       }
     >
       <MenuItem>
-        <Body onClick={() => handleEdit(item.key)}>
+        <Body onClick={() => navigate(`/editlist/${item.key}`)}>
           <HeadEdit>
             <EditIcon />
             &nbsp;Edit
@@ -27,8 +31,8 @@ export default function DropdownMenu({ handleDelete, handleEdit, item }) {
       <MenuItem>
         <Body onClick={() => handleDelete(item.key)}>
           <Head>
-           <DeleteIcon />
-           &nbsp;Delete
+            <DeleteIcon />
+            &nbsp;Delete
           </Head>
         </Body>
       </MenuItem>
@@ -69,8 +73,8 @@ const Head = styled.p`
   display: flex;
   line-height: 22px;
   &:hover {
-    color: #FF3333;
-    fill: #FF3333;
+    color: #ff3333;
+    fill: #ff3333;
   }
 `;
 
