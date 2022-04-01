@@ -3,9 +3,7 @@ import styled from "styled-components";
 import Avatar from "./Avatar";
 import { Link } from "react-router-dom";
 
-export default function Header({onClick}) {
-
-
+export default function Header({ onClick }) {
   return (
     <>
       <Body>
@@ -52,7 +50,8 @@ const Button = styled.button`
   background-color: #fff;
   margin: 0;
   padding: 0;
-  &:active {
-    fill: red;
+  fill: #242424;
+  &:hover {
+    fill: #2fe6ff;
   }
 `;

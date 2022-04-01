@@ -38,24 +38,9 @@ const Body = styled.div`
 `;
 
 const Head = styled.p`
+fill: #242424
   color: #242424;
   font-size: 20px;
   font-weight: 600;
   margin: 0 16px;
 `;
-
-// const Title = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-// `;
-
-// const Button = styled.button`
-//   border: none;
-//   background-color: #fff;
-//   margin: 0;
-//   padding: 0;
-//   &:hover {
-//     color: ##2fe6ff;
-//   }
-// `;

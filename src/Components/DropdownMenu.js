@@ -7,7 +7,6 @@ import EllipsesIcon from "../iconComponents/ellipsesIcon";
 import { Menu, MenuItem } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 
-
 export default function DropdownMenu({ handleDelete, handleEdit, item }) {
   return (
     <Menu
@@ -19,19 +18,18 @@ export default function DropdownMenu({ handleDelete, handleEdit, item }) {
     >
       <MenuItem>
         <Body onClick={() => handleEdit(item.key)}>
-        {/* <Body> */}
-          <Head>
+          <HeadEdit>
             <EditIcon />
-          </Head>
-          <Head>Edit</Head>
+            &nbsp;Edit
+          </HeadEdit>
         </Body>
       </MenuItem>
       <MenuItem>
         <Body onClick={() => handleDelete(item.key)}>
           <Head>
-            <DeleteIcon />
+           <DeleteIcon />
+           &nbsp;Delete
           </Head>
-          <Head>Delete</Head>
         </Body>
       </MenuItem>
     </Menu>
@@ -44,12 +42,11 @@ const Body = styled.button`
   border: none;
   border-radius: 8px;
   padding: 16px 12px;
-  &:hover {
-    // background-color: #f4f4f4;
-  }
+  font-size: 18px;
+  font-weight: 600;
 `;
 
-const Head = styled.p`
+const HeadEdit = styled.p`
   color: #242424;
   font-size: 18px;
   font-weight: 600;
@@ -57,10 +54,28 @@ const Head = styled.p`
   margin: 0;
   display: flex;
   line-height: 22px;
+  &:hover {
+    color: #2fe6ff;
+    fill: #2fe6ff;
+  }
+`;
+
+const Head = styled.p`
+  // color: #242424;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 4px;
+  margin: 0;
+  display: flex;
+  line-height: 22px;
+  &:hover {
+    color: #FF3333;
+    fill: #FF3333;
+  }
 `;
 
 const Button = styled.button`
-  color: #242424;
+  // color: #242424;
   font-size: 20px;
   font-weight: 600;
   background-color: #ffffff;
