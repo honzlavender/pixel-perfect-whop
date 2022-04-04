@@ -3,7 +3,7 @@ import styled from "styled-components";
 import DeleteIcon from "../iconComponents/deleteIcon";
 import EditIcon from "../iconComponents/editIcon";
 import EllipsesIcon from "../iconComponents/ellipsesIcon";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { Menu, MenuItem } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
@@ -11,7 +11,14 @@ import "@szhsin/react-menu/dist/index.css";
 export default function DropdownMenu({ handleDelete, item }) {
   const navigate = useNavigate();
 
-  console.log(item.text);
+  const nav = (key, text) =>
+    navigate(`/editlist/${item.key}`, {
+      state:{key:item.key,text:item.text}
+    });
+//not sure how to pass state via useNavigate
+
+
+  console.log(item);
   return (
     <Menu
       menuButton={
@@ -21,7 +28,8 @@ export default function DropdownMenu({ handleDelete, item }) {
       }
     >
       <MenuItem>
-        <Body onClick={() => navigate(`/editlist/${item.key}`)}>
+      {/* edit button goes to existing list item w assigned key */}
+        <Body onClick={() => navigate(`/newlist/${item.key}`)}>
           <HeadEdit>
             <EditIcon />
             &nbsp;Edit

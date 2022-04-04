@@ -1,17 +1,17 @@
-// import { useRef, useState } from "react";
 import styled from "styled-components";
 import DropdownMenu from "./DropdownMenu";
-// import DropdownMenu from "./DropdownMenu";
 
 export default function ListItem({ item, handleDelete }) {
-// console.log(item)
 
   return (
     <>
       <Body>
         <Head>{item.text}</Head>
         <Head>
-          <DropdownMenu item={item} handleDelete={handleDelete}/>
+          <DropdownMenu
+            item={item}
+            handleDelete={handleDelete}
+          />
         </Head>
       </Body>
     </>
@@ -30,7 +30,7 @@ const Body = styled.div`
   justify-content: space-between;
   margin: 32px 24px 24px;
   &:hover {
-    : #f4f4f4;
+    :#f4f4f4 ;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
   }
   @media (min-width: 1040px) {

@@ -3,25 +3,20 @@ import styled from "styled-components";
 export default function CreateTitle({
   onChange,
   newTitle,
+  setEditingText,
 }) {
-  return (
-    <div>
 
-      {/* {newTitle.key === toEdit ? (
-        <Input
-           placeholder='poop'
-          type="text"
-          onChange={onEditChange}
-           value={newTitle.text}
-        />
-      ) : ( */}
-        <Input
-          placeholder="List title"
-          type="text"
-          onChange={onChange}
-          value={newTitle.text}
-        />
-       {/* )} */}
+  return (
+    //conditional input for new state and updating state
+    //currently set to new state only
+    <div>
+      <Input
+        placeholder="List title"
+        type="text"
+        onChange={onChange}
+        // onChange={() => setEditingText(newTitle.key)}
+        value={newTitle.text}
+      />
     </div>
   );
 }

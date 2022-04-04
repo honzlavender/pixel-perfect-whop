@@ -1,51 +1,29 @@
-import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Home from "./Components/Home";
-import AddNewTitle from "./Components/AddNewTitle";
+import Home from "./Screens/Home";
+import AddNewTitle from "./Screens/AddNewTitle";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import EditList from "./Components/EditList";
 
-export default function Parent() {
+export default function Layout() {
   const navigate = useNavigate();
   const [list, setList] = useState([]);
   const [newTitle, setNewTitle] = useState([{ text: "", key: "" }]);
+  // const [editingText, setEditingText] = useState('');
+  // const [isEditing, setIsEditing] = useState(null)
 
-  // useEffect(() => {
-  //   const json = localStorage.getItem("list");
-  //   const loadedTodos = JSON.parse(json);
-  //   if (loadedTodos) {
-  //     setList(loadedTodos);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const json = localStorage.getItem("list");
+    const loadedTodos = JSON.parse(json);
+    if (loadedTodos) {
+      setList(loadedTodos);
+    }
+  }, []);
 
   useEffect(() => {
     const json = JSON.stringify(list);
     localStorage.setItem("list", json);
   }, [list]);
-
-  // function submitEdit(key) {
-  //   const updatedTodos = [...list].map((todo) => {
-  //     //   if (todo.key === key) {
-  //     //     todo.text = newTitle;
-  //     //   }
-  //     //   return todo;
-  //     // });
-  //     if (todo.key === key) {
-  //       setList((prevList) => {
-  //         todo.text = newTitle.text;
-  //       });
-  //     }
-  //     return todo;
-  //   });
-
-  //   navigate({
-  //     pathname: "/",
-  //   });
-
-  //   setList(updatedTodos);
-  //   // console.log(updatedTodos);
-  // }
 
   const handleDelete = (key) => {
     let deletedList = [...list].filter((todo) => todo.key !== key);
@@ -60,9 +38,9 @@ export default function Parent() {
   const onSubmit = (e, key) => {
     e.preventDefault();
 
-    if (newTitle === "") {
-      alert("OOPS");
-    } else {
+    if (newTitle === '') {
+      alert("oops! add title");
+    } else if (newTitle) {
       setList((prevList) => {
         return [{ text: newTitle, key: Math.random().toString() }, ...prevList];
       });
@@ -72,6 +50,21 @@ export default function Parent() {
     });
     setNewTitle("");
   };
+
+  // function submitEdits(key) {
+  //   const updatedTitles = [...list].map((newTitle) => {
+  //     if (newTitle.key === key) {
+  //       newTitle.text = editingText
+  //     }
+  //     return newTitle;
+  //   });
+  //   navigate({
+  //     pathname: "/",
+  //   });
+  //   setList(updatedTitles);
+  //   setIsEditing(null)
+  // }
+
 
   return (
     <Routes>
@@ -88,19 +81,21 @@ export default function Parent() {
             list={list}
             newTitle={newTitle}
             onChange={onChange}
-            // submitEdit={submitEdit}
             onSubmit={onSubmit}
           />
         }
       />
       <Route
-        path="/editlist/:listId"
+        path="/newlist/:listId"
         element={
-          <EditList
+          <AddNewTitle
             list={list}
             newTitle={newTitle}
-            // submitEdit={submitEdit}
+            // setEditingText={setEditingText}
+            // isEditing={isEditing}
+            // submitEdits={submitEdits}
             onChange={onChange}
+            onSubmit={onSubmit}
           />
         }
       />

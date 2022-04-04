@@ -1,20 +1,25 @@
 import CreateList from "./CreateList";
 import ListItem from "./ListItem";
 
-export default function List({ list, handleDelete, submitEdit }) {
+export default function List({ list, handleDelete, newTitle }) {
+  //
+
+  
   return (
     <div>
+      {/* maps and displays lists */}
       {list.length ? (
         list.map((item) => (
           <ListItem
             item={item}
-            list={list.key}
+            list={list}
             handleDelete={handleDelete}
           />
         ))
       ) : (
         <div>
-          <CreateList list={list} />
+          {/* empty state - no lists exists */}
+          <CreateList list={list} /> 
         </div>
       )}
     </div>
