@@ -13,10 +13,9 @@ export default function DropdownMenu({ handleDelete, item }) {
 
   const nav = (key, text) =>
     navigate(`/editlist/${item.key}`, {
-      state:{key:item.key,text:item.text}
+      state: { key: item.key, text: item.text },
     });
-//not sure how to pass state via useNavigate
-
+  //not sure how to pass state via useNavigate
 
   console.log(item);
   return (
@@ -28,7 +27,7 @@ export default function DropdownMenu({ handleDelete, item }) {
       }
     >
       <MenuItem>
-      {/* edit button goes to existing list item w assigned key */}
+        {/* edit button goes to existing list item w assigned key */}
         <Body onClick={() => navigate(`/newlist/${item.key}`)}>
           <HeadEdit>
             <EditIcon />
@@ -73,7 +72,6 @@ const HeadEdit = styled.p`
 `;
 
 const Head = styled.p`
-  // color: #242424;
   font-size: 18px;
   font-weight: 600;
   padding: 0 4px;
@@ -87,7 +85,6 @@ const Head = styled.p`
 `;
 
 const Button = styled.button`
-  // color: #242424;
   font-size: 20px;
   font-weight: 600;
   background-color: #ffffff;

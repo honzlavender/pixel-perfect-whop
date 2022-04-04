@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ArrowIcon from "../iconComponents/arrowIcon";
 import CreateTitle from "../Components/CreateTitle";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function AddNewTitle({
   onChange,
@@ -51,9 +51,9 @@ export default function AddNewTitle({
               edit
             </Head>
           ) : ( */}
-            <Head type="submit" onClick={onSubmit}>
-              Done
-            </Head>
+          <Head type="submit" onClick={onSubmit}>
+            Done
+          </Head>
           {/* )} */}
         </Body>
         <CreateTitle

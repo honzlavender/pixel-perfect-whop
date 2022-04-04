@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
-export default function CreateTitle({
-  onChange,
-  newTitle,
-  setEditingText,
-}) {
-
+export default function CreateTitle({ onChange, newTitle, setEditingText }) {
   return (
     //conditional input for new state and updating state
     //currently set to new state only
