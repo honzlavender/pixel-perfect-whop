@@ -2,7 +2,9 @@
 
 [Figma file for reference](https://www.figma.com/file/s6Husazop7uufjGxdcdOPs/Front-End-Test-(Carl-Roberts)?node-id=2%3A37)
 
-In the project directory, you can run:
+To get started and install dependencies run:
+
+### `npm install`
 
 ### `npm start`
 
